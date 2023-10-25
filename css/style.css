@@ -93,4 +93,5 @@ box-shadow: 0 0 6px rgba(0,0 green,0 blue, 0.2);
 cursor: pointer;
 border-radius: 5px;
 margin: 10px auto;
+display: none;
 }
