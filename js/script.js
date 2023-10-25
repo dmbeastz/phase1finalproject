@@ -27,7 +27,7 @@ async function searchImages () {
 //Creating and Pushing all the data into the template created in the HTML ("div")
 results.map ((result)=> {
     const imageWrapper = document.createElement('div');
-    imageWrapper.classList.add ("search-result");
+    imageWrapper.classList.add (".search-result");
     const image = document.getElementById ("img");
     image.src = result.urls.small;//Get the image
     image.alt = result.alt_description;//Get the description
