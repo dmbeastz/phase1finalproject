@@ -1,24 +1,50 @@
-//Access Key
+
+
+// Creating input data that can be stored
+let inputData = ""
+
+// Access Key
 const accesskey = "HuLYymNuMZ_DGABtlB5eg94a19uP1n6riYOmJXMp1Ew";
-//DOM
-const formEl = document.querySelector ("form");
+// //DOM
+ const formEl = document.querySelector ("form");
 const searchinput = document.getElementById ("search-input");
 const searchResults = document.querySelector(".search-result");
 const viewmore = document.getElementById ("view-more-button");
 
-//Creating input data that can be stored
-let inputData = ""
 let page = 1;
 
-//creating an asycn function for the page
-async function searchImages () {
-    inputData = inputEl.value;//holds the data for the input section
-    const url = `https://api.unsplash.com/search/photos?page=${page}&query${inputData}&client_id=${accesskey}`//the  dynamic url
+ formEl.addEventListener('submit', (event) =>
+ {
+     event.preventDefault()
+     searchImages(searchinput.value, page)
+ })
 
-    const response = await fetch (url)
-    const data = await response.json()
+ function searchImages(inputValue, page)
+{
+  console.log(inputValue)
+ console.log(page)
+console.log(accesskey)
 
-    const results = data.results
+ fetch(`https://api.unsplash.com/search/photos?page=${page}&query=${inputValue}&client_id=${accesskey}`)
+ .then(response => response.json())
+.then(pictureData => 
+ {
+    console.log(pictureData['results'][0]['urls']['regular'])
+
+    let imagesearch = document.getElementById('imageresults')
+    imagesearch.src =pictureData['results'][0]['urls']['regular']
+    //searchResults.appendChild(imagesearch)
+    
+
+    result.innerHTML = {
+        
+    }
+    
+
+            
+
+                
+  })
 
     if (page === 1){
         viewmore.style.display = "block"
@@ -29,8 +55,8 @@ results.map ((result)=> {
     const imageWrapper = document.createElement('div');
     imageWrapper.classList.add (".search-result");
     const image = document.getElementById ("img");
-    image.src = result.urls.small;//Get the image
-    image.alt = result.alt_description;//Get the description
+    image.src = results.urls.small;//Get the image
+    image.alt = results.alt_description;//Get the description
     const imageLink = document.createElement("a");
     imageLink.href = results.links.html;//Get the link for a spefic image
     imageLink.target = "_blank";
@@ -51,7 +77,7 @@ if (page > 1){
 formEl.addEventListener("submit", (event) =>{
     event.preventDefault()
     page = 1;
-    searchImages
+    searchImages()
 });
 viewmore.addEventListener("click", () =>{
  searchImages
