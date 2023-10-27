@@ -1,4 +1,5 @@
 # Phase-1-Finalproject
+**
 ## Table of Contents 
 [Introduction](#introduction)
 [Demo](#Demo)
@@ -32,6 +33,7 @@ Open your web browser and navigate to http://localhost:3000.
 1. Type in the name of a picture you want to see 
 2. Press search 
 3. Scroll through and find the image of your choice 
+4. To search another one refresh the page
 
 
 ## License
