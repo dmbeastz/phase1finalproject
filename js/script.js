@@ -1,5 +1,4 @@
-
-
+//Searching for images
 // Creating input data that can be stored
 let inputData = ""
 let imagesearch = document.getElementById('imageresults')
@@ -9,15 +8,16 @@ const accesskey = "HuLYymNuMZ_DGABtlB5eg94a19uP1n6riYOmJXMp1Ew";
  const formEl = document.querySelector ("form");
 const searchinput = document.getElementById ("search-input");
 const searchResults = document.querySelector(".search-results");
-const viewmore = document.getElementById ("view-more-button");
-
+const homepagesimages = document.getElementById ("homeimages");
+const homedescription = document.getElementById("description");
 let page = 1;
-// imagesearch.style='display:none'
+
+
  formEl.addEventListener('submit', (event) =>
  {
      event.preventDefault()
      searchImages(searchinput.value, page)
-    // imagesearch.style.display = 'initial';
+    
  })
 
  function searchImages(inputValue, page)
@@ -45,58 +45,7 @@ let page = 1;
         searchResults.appendChild(searchResult)
 
     });
-
-  
-
-    // pictureData.forEach(pictureData => 
-    // {
-    //     let [{description,urls :{raw} }]=pictureData
-    //     console.log(description)
-    //     console.log(raw)
-    // });
-    // console.log(pictureData['results'][0]['urls']['regular'])
- 
-    
-    // imagesearch.src =pictureData['results'][0]['urls']['regular']
-    
-    
-
-    // results.innerHTML = {
-        
-    // }
-    
-
-            
-
-                
-  })
-
-    // if (page === 1){
-    //     viewmore.style.display = "block"
-    // }
-
-//Creating and Pushing all the data into the template created in the HTML ("div")
-// results.map ((result)=> {
-//     const imageWrapper = document.createElement('div');
-//     imageWrapper.classList.add (".search-result");
-//     const image = document.getElementById ("img");
-//     image.src = results.urls.small;//Get the image
-//     image.alt = results.alt_description;//Get the description
-//     const imageLink = document.createElement("a");
-//     imageLink.href = results.links.html;//Get the link for a spefic image
-//     imageLink.target = "_blank";
-//     image.textContent = result.alt_description;
-
-//     imageWrapper.appendChild (image);
-//     imageWrapper.appendChild (imageLink);
-//     imageWrapper.appendChild (imageWrapper);
-
-
-// });
-// page ++
-// if (page > 1){
-//     viewmore.style.display = "block"
-// }
+})
 
 
 formEl.addEventListener("submit", (event) =>{
@@ -104,7 +53,5 @@ formEl.addEventListener("submit", (event) =>{
     page = 1;
     searchImages()
 });
-viewmore.addEventListener("click", () =>{
- searchImages
-});
+
 }
