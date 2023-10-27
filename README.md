@@ -14,7 +14,7 @@ Find a Flick is a web app powered by a unsplash api this web app allows users to
 - Gives added desription on images provided 
 
 ## Demo 
-Visit the demo of Find a Flick at []
+Visit the demo of Find a Flick at [https://find-a-flick.netlify.app/]
 ## How to Run
 
 1. Clone the repository 
@@ -35,5 +35,5 @@ Open your web browser and navigate to http://localhost:3000.
 
 
 ## License
-Find a Flick is released under t
+Find a Flick is released under the MIT license 
 
